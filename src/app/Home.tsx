@@ -5,9 +5,10 @@ import { Title } from "../components/Title";
 import { ButtonIcon } from "../components/ButtonIcon";
 
 import { StackRoutesProps } from "@/routes/StackRoutes";
-import { BottomRoutesProps} from "@/routes/BottomRoutes";
+import { BottomRoutesProps } from "@/routes/BottomRoutes";
+import { DrawerRoutesProps } from "@/routes/DrawerRoutes";
 
-export function Home({navigation}: BottomRoutesProps<'home'>) {
+export function Home({navigation}: DrawerRoutesProps<'home'>) {
 
     return (
         <View
@@ -18,6 +19,7 @@ export function Home({navigation}: BottomRoutesProps<'home'>) {
             }}
         >
             <Header>
+                <ButtonIcon name="menu" onPress={() => navigation.toggleDrawer()} />
                 <Title>Home</Title>
                 <ButtonIcon name="add-circle" onPress={() => navigation.navigate("product", {id: '2'})} />
             </Header>
